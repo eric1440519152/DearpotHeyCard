@@ -1,0 +1,91 @@
+/* components/cardBox/cardBox.wxss */
+view.cardBox{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+image.cardBox{
+  position: absolute;
+  top: 150rpx;
+  left: 27rpx;
+  width: 700rpx;
+  height: 558rpx;
+  z-index: 1;
+}
+
+image.avatar{
+  position: absolute;
+  top: 206rpx;
+  left: 86rpx;
+  width: 102rpx;
+  height: 102rpx;
+  z-index: 0;
+}
+
+text.nickname{
+  position: absolute;
+  top: 217rpx;
+  left: 205rpx;
+  color: white;
+  font-size: x-large;
+  font-weight: 700;
+  z-index: 2;
+}
+
+text.level{
+  position: absolute;
+  top: 265rpx;
+  left: 207rpx;
+  color: white;
+  font-size: small;
+  font-weight: 600;
+  z-index: 2;
+}
+
+text.expire{
+  position: absolute;
+  text-align: right;
+  top: 340rpx;
+  right: 87rpx;
+  color: white;
+  font-size: small;
+  font-weight: 500;
+  z-index: 2;
+}
+
+text.cardidtitle{
+  position: absolute;
+  top: 583rpx;
+  left: 105rpx;
+  color: black;
+  font-size: medium;
+  font-weight: 600;
+  z-index: 2;
+}
+
+text.cardid{
+  position: absolute;
+  top: 589rpx;
+  right: 105rpx;
+  color: black;
+  font-size: medium;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.barcode {
+  position: absolute;
+  top: 415rpx;
+  display: flex;
+  height: 165rpx;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.barcode > canvas {
+  width: 570rpx;
+  height: 165rpx;  
+}

@@ -1,0 +1,106 @@
+<msgBox id="msgBox" bind:callback="depositVIP"  showModal=""></msgBox>
+<scroll-view scroll-y class="scrollPage">
+  <view class="UCenter-bg">
+  </view>
+  <view class="padding flex text-center text-grey bg-white shadow-warp">
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="text-xxl text-select">{{level}}</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-vip"></text> 会员等级</view>
+    </view>
+    <view class="flex flex-sub flex-direction">
+      <view class="text-xxl text-select">{{expire}}</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-time"></text> 会员截止</view>
+    </view> 
+  </view>
+  <view wx:if="{{login}}" class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view wx:if="{{allowDepositVIP}}" class="cu-item arrow">
+      <view class="content" bindtap="submitDeposit">
+        <text class="cuIcon-vipcard text-select"></text>
+        <text class="text-grey">{{depositVIPtag}}</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content" bindtap="showChangeName">
+        <text class="cuIcon-profile text-select"></text>
+        <text class="text-grey">{{name}}
+        </text>
+      </view>
+    </view>
+
+    <form bindsubmit='changeName'>
+      <view class="cu-modal {{showChangeName ? 'show': ''}}">
+        <view class="cu-dialog">
+          <view class="cu-bar bg-white justify-end">
+            <view class="content">修改姓名</view>
+            <view class="action" bindtap="hideChangeName">
+              <text class="cuIcon-close text-red"></text>
+            </view>
+          </view>
+          <view class="padding-xl">
+            <input name="name" placeholder="{{name}}"></input>
+          </view>
+          <view class="cu-bar bg-white justify-end">
+            <view class="action">
+              <button class="cu-btn line-green text-green" bindtap="hideChangeName">取消</button>
+              <button class="cu-btn bg-green margin-left" formType="submit">确定</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </form>
+
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-phone text-select"></text>
+        <text class="text-grey">绑定手机 {{phone}}</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-vip text-select"></text>
+        <text class="text-grey">黑卡开通时间 {{date}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+      <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-time text-select"></text>
+        <text class="text-grey">营业时间 10:00AM-09:00PM</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-shop text-select"></text>
+        <text class="text-grey">地址 浙江宁波北仑银泰城四楼亲爱的郭</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <button class="cu-btn content" open-type="contact">
+        <text class="cuIcon-servicefill text-select"></text>
+        <text class="text-grey">在线订桌</text>
+      </button>
+    </view>
+    <view class="cu-item">
+      <button class="cu-btn content" open-type="feedback">
+        <text class="cuIcon-edit text-select"></text>
+        <text class="text-grey">Bug反馈</text>
+      </button>
+    </view>
+    <view wx:if="{{is_admin}}" class="cu-item">
+       <navigator class="content" url="/pages/admin/admin" hover-class="none">
+        <text class="cuIcon-settings text-select"></text>
+        <text class="text-grey">管理员后台</text>
+      </navigator>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-selection text-select"></text>
+        <text class="text-grey">自豪地采用 ColorUI  ©Eric</text>
+      </view>
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

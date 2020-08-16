@@ -1,0 +1,22 @@
+<!--pages/main/main.wxml-->
+<view class="sliderBox">
+  <swiper easing-function="easeInOutCubic" autoplay="true" interval="5000" duration="500">
+    <swiper-item>
+      <image src="/img/slider1.png" style="height: 100%; width: 100%;"></image>
+    </swiper-item>
+  </swiper>
+  <view class="logo">
+    <image class="sliderlogo" src="/img/sliderlogo.png"></image>
+  </view>
+</view>
+<!--公告条-->
+<view class="noticeBox">
+  <image class="noticeBox" src="/img/noticebox.png"></image>
+  <text class="noticetext">{{notice}}</text>
+</view>
+<view clas="cardunit">
+  <text class="cardBoxTitle">我的卡包</text>
+  <cardBox wx:if="{{!reg}}" id="cardBox"></cardBox>
+  <register bind:callBarCode="callBarCode" wx:if="{{reg}}"></register>
+</view>
+

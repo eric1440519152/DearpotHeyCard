@@ -1,0 +1,13 @@
+<main wx:if="{{page=='main'}}"></main>
+<profile wx:if="{{page=='profile'}}"></profile>
+
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" bindtap="NavChange" data-cur="main">
+    <view class="cuIcon-vipcard lg {{page=='main'?'text-select':'text-gray'}}"></view>
+    <view class="{{page=='main'?'text-select':'text-gray'}}">会员卡</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="profile">
+    <view class="cuIcon-profile lg {{page=='profile'?'text-select':'text-gray'}}"></view>
+    <view class="{{page=='profile'?'text-select':'text-gray'}}">我的</view>
+  </view>
+</view>

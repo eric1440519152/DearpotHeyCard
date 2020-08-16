@@ -1,0 +1,26 @@
+/* components/registerBox/registerBox.wxss */
+view.registerBox{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+image.registerBox{
+  position: absolute;
+  top: 150rpx;
+  left: 27rpx;
+  width: 700rpx;
+  height: 558rpx;
+}
+
+.registerbutton{
+  top: 307rpx;
+  font-size: 27rpx;
+  color: white !important;
+  border-color: white !important;
+  border: 4rpx solid !important;
+  line-height: 40rpx;
+  padding-top: 0rpx !important;
+  width: 210rpx;
+  height: 51rpx;
+}

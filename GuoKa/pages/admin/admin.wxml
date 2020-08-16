@@ -1,0 +1,102 @@
+<!--GuoKa/pages/admin/admin.wxml-->
+<msgBox id="msgBox" bind:callback="depositVIP"  showModal=""></msgBox>
+<form bindsubmit='checkPhone' wx:if="{{check_user || edit_user}}">
+<view class="padding-xl">
+  <button bindtap="scanQR" class="cu-btn block bg-black lg">
+      <text class="cuIcon-qrcode"></text>扫描会员卡
+  </button>
+</view>
+<view class="cu-form-group">
+  <view class="title">或输入手机号</view>
+  <input name="phone" placeholder="会员手机号"></input>
+  <button formType="submit" class="cu-btn bg-green shadow">查询</button>
+</view>
+</form>
+<form wx:if="{{showChangeUser}}" bindsubmit='changeUser'>
+  <view class="cu-modal show">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white justify-end">
+        <view class="content">详细信息</view>
+        <view class="action" bindtap="hideChangeUser">
+          <text class="cuIcon-close text-red"></text>
+        </view>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">VIP状态</view>
+        <switch checked="{{is_vip}}" bindchange="is_vip_change"></switch>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">完整卡号</view>
+        <input disabled="disabled" name="_id" value="{{_id}}"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">开放ID</view>
+        <input disabled="{{!edit_user}}" name="openid" value="{{openid}}"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">姓名</view>
+        <input disabled="{{!edit_user}}" name="name" value="{{name}}"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">性别</view>
+        <input disabled="{{!edit_user}}" name="sex" value="{{sex}}"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">手机</view>
+        <input disabled="{{!edit_user}}" name="phone" value="{{phone}}"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">黑卡过期时间</view>
+        <input disabled="{{!edit_user}}" name="expire" value="{{expire}}"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">会员开通时间</view>
+        <input disabled="{{!edit_user}}" name="activeTime" value="{{activeTime}}"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">积分</view>
+        <input disabled="{{!edit_user}}" name="point" value="{{point}}"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">余额</view>
+        <input disabled="{{!edit_user}}" name="credit" value="{{credit}}"></input>
+      </view>
+      <view class="cu-bar bg-white justify-end">
+        <view class="action">
+          <button wx:if="{{edit_user}}" class="cu-btn line-green text-green" formType="submit">保存</button>
+          <button class="cu-btn bg-green margin-left" bindtap="hideChangeUser">确定</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</form>
+
+<form wx:if="{{edit_system}}" bindsubmit='changeSystem'>
+  <view class="cu-form-group margin-top">
+    <view class="title">允许会员注册</view>
+    <switch checked="{{can_register}}" bindchange="can_register_change"></switch>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">允许开通VIP</view>
+    <switch checked="{{can_reg_vip}}" bindchange="can_reg_vip_change"></switch>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">允许续费VIP</view>
+    <switch checked="{{can_continue_vip}}" bindchange="can_continue_vip_change"></switch>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">公告</view>
+    <input placeholder="首页公告" name="notice" value="{{notice}}"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">开通VIP价格（单位 分）</view>
+    <input placeholder="单位 分" name="first_vip_price" value="{{first_vip_price}}"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">续费VIP价格（单位 分）</view>
+    <input placeholder="单位 分" name="con_vip_price" value="{{con_vip_price}}"></input>
+  </view>
+  <view class="padding flex flex-direction">
+    <button formType="submit" class="cu-btn bg-blue lg">保存</button>
+  </view>
+</form>

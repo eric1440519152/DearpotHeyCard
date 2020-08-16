@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "main" : "/pages/main/main",
+    "profile": "/pages/profile/profile"
+  }
+}

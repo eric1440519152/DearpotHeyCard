@@ -1,0 +1,32 @@
+<!--components/msgModel/msgModel.wxml-->
+<view class="cu-modal bottom-modal {{showModal=='Bottom'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white">
+      <view class="action"></view>
+      <view class="action text-blue" open-type="{{openType}}"  bindtap="{{confirmAction}}">确定</view>
+    </view>
+    <view class="padding-xl">
+      {{msg}}
+    </view>
+  </view>
+</view>
+
+<view class="cu-modal {{showModal=='Dialog'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">{{title}}</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      {{msg}}
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn line-green text-green" bindtap="hideModal">取消</button>
+        <button class="cu-btn bg-green margin-left" open-type="{{openType}}" bindgetphonenumber="callback" bindgetuserinfo="callback" bindtap="{{confirmAction}}">确定</button>
+      </view>
+    </view>
+  </view>
+</view>

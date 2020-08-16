@@ -1,0 +1,14 @@
+<!--components/cardBox/cardBox.wxml-->
+<view class="cardBox">
+  <text class="nickname">{{nickname}}</text>
+  <text class="level">{{level}}</text>
+  <text class="expire">{{expire}}</text>
+  <text class="cardidtitle">会员编号</text>
+  <text class="cardid">{{cardid}}</text>
+  <view class="barcode">
+      <canvas canvas-id="barcode" />
+  </view>
+  <image class="cardBox" src="{{level=='黑卡会员' ? '/img/blackcard.png':'/img/commoncard.png'}}"></image>
+  <image class="avatar" src="{{avatar}}"/>
+</view>
+  

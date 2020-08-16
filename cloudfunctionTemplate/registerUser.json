@@ -1,0 +1,15 @@
+[
+  {
+    "name": "注册用户",
+    "value": {
+      "userInfo": {
+        "gender": 1
+      },
+      "cloud": {
+        "data": {
+          "purePhoneNumber": "19851937930"
+        }
+      }
+    }
+  }
+]

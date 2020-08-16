@@ -1,0 +1,7 @@
+<!--components/registerBox/registerBox.wxml-->
+<view class="registerBox">
+  <image class="registerBox" src="/img/register.png"></image>
+  <button disabled="{{regBtnDis}}" class="registerbutton" bindgetuserinfo="reg" type="primary" plain="true" open-type="getUserInfo">注册 / 登陆</button>
+</view>
+
+<msgBox id="msgBox" bind:callback="msgCallback" showModal=""></msgBox>

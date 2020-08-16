@@ -1,0 +1,44 @@
+user表
+openid 微信openid
+_id 卡号（自动编号）
+name 姓名
+sex 性别
+phone 注册手机号码
+is_admin 是否为管理员，如果是的话 再权限表中查询允许的管理权限
+is_vip 是否是黑卡会员
+expire 黑卡会员过期时间
+activeTime 会员开通时间
+point 积分
+credit 余额
+
+permission表
+id 自动编号
+openid 微信openid
+edit_user 编辑用户信息
+check_user 查看用户信息
+edit_system 编辑系统设置
+add_credit 充值
+deduct_credit 扣费
+add_point 充积分
+deduct_point 扣积分
+
+systems表
+slider_1 幻灯片1图片地址
+slider_1_link 幻灯片1链接
+slider_2 幻灯片1图片地址
+slider_2_link 幻灯片1链接
+slider_3 幻灯片1图片地址
+slider_3_link 幻灯片1链接
+notice_1 公告1文本
+notice_1_link 公告1文本链接
+notice_2 公告1文本
+notice_2_link 公告1文本链接
+can_register 能否注册会员
+can_reg_vip 能否注册vip
+can_continue_vip能否续费vip
+can_use_credit余额功能
+first_vip_price初次VIP开卡费用
+con_vip_price续费VIP开卡费用
+
+登录注册逻辑：
+小程序加载时先获取个人信息openid，如果能获取到说明已授权，不需要提交参数可直接登陆，调用loginIn函数登录判断手机号是否已经写入，如果写入，将用户全部数据取回，完成登陆；如果手机号未写入或者无法取得openid，视为未登录成功，调用注册登录接口

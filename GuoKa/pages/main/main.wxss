@@ -1,0 +1,47 @@
+/* pages/main/main.wxss */
+swiper{
+  height: 225px; 
+}
+
+image.sliderlogo{
+  width: 420rpx;
+  height: 223rpx;
+}
+
+view.logo{
+  position: absolute;
+  top: 44rpx;
+  left: 25rpx;
+}
+
+view.sliderBox{
+  position: relative;
+}
+
+.noticetext{
+  position: absolute;
+  top: 60rpx;
+  font-size: medium;
+  font-weight: 700;
+}
+
+view.noticeBox{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+image.noticeBox{
+  position: absolute;
+  top: 20rpx;
+  width: 688rpx;
+  height: 126rpx;
+}
+
+.cardBoxTitle{
+  position: relative;
+  top: 155rpx;
+  left: 57rpx;
+  font-size: x-large;
+  font-weight: 700;
+}
