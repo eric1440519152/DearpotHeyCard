@@ -1,4 +1,5 @@
 // components/registerBox/registerBox.js
+const app = getApp();
 Component({
   /**
    * 组件的属性列表
@@ -27,7 +28,15 @@ Component({
         //用户拒绝授权
         msgBox.showMsg("您必须同意获取您的信息才可以使用本服务，请您尝试重新登陆","hideModal");
       }else{
-        msgBox.showModal("请点击确定以同意我们获取您的手机号以登陆","手机号登陆","getPhoneNumber","hideModal");
+        if(app.globalData.data != null){
+          //说明之前已经注册过了，只是没有授权获取信息
+          app.globalData.userInfo = userInfo;
+          //注册或绑定成功，调用条码框
+          this.triggerEvent('callBarCode', "logined");
+        }else{
+          app.globalData.userInfo = userInfo;
+          msgBox.showModal("请点击确定以同意我们获取您的手机号以登陆","手机号登陆","getPhoneNumber","hideModal");
+        }
       }
     },
     msgCallback: function(e){

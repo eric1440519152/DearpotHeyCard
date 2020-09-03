@@ -55,7 +55,7 @@ exports.main = async (event, context) => {
       }else{
         //新开
         newExpire = nowTime.add(1,'year').toISOString();
-        activeTime = nowTime.toISOString();
+        activeTime = moment(db.serverDate()).toISOString();
         total = system.first_vip_price;
       }
 
@@ -78,6 +78,7 @@ exports.main = async (event, context) => {
             openId: openid,
             total: total,
             resultCode: resultCode,
+            activeTime: moment(db.serverDate()).toISOString(),
             phone: res.data[0].phone
           }
         })

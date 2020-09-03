@@ -25,7 +25,7 @@ image.avatar{
 
 text.nickname{
   position: absolute;
-  top: 217rpx;
+  top: 215rpx;
   left: 205rpx;
   color: white;
   font-size: x-large;
@@ -35,7 +35,7 @@ text.nickname{
 
 text.level{
   position: absolute;
-  top: 265rpx;
+  top: 270rpx;
   left: 207rpx;
   color: white;
   font-size: small;

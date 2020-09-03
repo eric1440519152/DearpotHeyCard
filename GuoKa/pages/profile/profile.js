@@ -20,7 +20,9 @@ Component({
     if(userInfo != null && data != null){
       var name = data.name;
       var expiredate = moment(data.expire);
-      var date = moment(data.date);
+      var date = moment(data.activeTime);
+
+      console.log("日期",date);
 
       //如果允许新开或续费，才能显示按钮
       if((data.is_vip && system.can_continue_vip) || (!data.is_vip && system.can_reg_vip)){

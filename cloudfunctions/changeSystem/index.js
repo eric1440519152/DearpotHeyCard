@@ -29,7 +29,7 @@ exports.main = async (event, context) => {
     sub: "main"
   }).update({
     data:{
-      notice: notice,
+      notice_1: notice,
       con_vip_price: Number(con_vip_price),
       first_vip_price: Number(first_vip_price)
     }
